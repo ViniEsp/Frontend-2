@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="cadastro-de-rcados">
+        <input type="text" placeholder="Titulo" required name="titulo" value="">
+        <input type="text" placeholder="Descricao" required name="descricao" value="">
+        <button>Cadastro Recado</button>
+    </form>
+    
+
+    <script>
+        const form = document.querySelector('#cadastro-de-recados');
+        form.addEventListener("submit", function(evento){
+            evento.preventDefault();
+            console.log(evento, eveto.target)
+            const titulo = form.querySelector("input[name='titulo']").value
+            const descricao = form.querySelector("input[name='descricao']").value
+            console.log("submit", titulo, descricao);
+        })
+
+    </script>
+
+</body>
+</html>

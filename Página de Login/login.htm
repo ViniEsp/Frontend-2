@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario-login">
+        <input type="email" required name="email" id="" value="">
+        <input type="password" required name="password" id="" value="">
+        <button type="submit">Logn</button>
+    </form>
+    <div id="feedback"></div>
+    <script>
+
+        const form = document.getElementById('formulario-login');
+        form.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+
+        const email  = document.querySelector("#email").value
+        const senha = document.querySelector("#senha").value
+
+        console.log('submit', email, senha)
+        })
+
+        //metodo POST
+        //URL:
+        //body:JSON{ email, password}
+
+        axios.post('http://localhost:8000/user', {
+                email: email,
+                password: senha,
+            }).then(function(param){
+                alert('Login realizado com sucesso!')
+                console.log(param)
+            }).catch(function(param){
+                alert('Erro ao realizar o login')
+                console.log(param)
+            })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario-login">
+
+        <label for="email">Email:</label>
+        <input type="email" required name="email" id="email" value="">
+
+        <label for="senha">Senha:</label>
+        <input type="password" required name="password" id="senha" value="">
+
+        <label for="nome">Nome:</label>
+        <input type="text" required name="usuario_nome" id="nome" value="">
+        
+        <button type="submit">Logn</button>
+    </form>
+    <div id="feedback"></div>
+
+    <script>
+
+        //email
+        const form = document.getElementById("formulario-login");
+        form.addEventListener("submit", function(evento){
+            evento.preventDefault()
+            // const email = document.getElementById("email").value
+            // const senha = document.getElementById("senha").value
+            // const nome = document.getElementById("nome").value
+
+            const nome = form.nome.value;
+            const email = form.email.value;
+            const senha = form.senha.value;
+
+            console.log(email,senha,nome);
+
+            const response = await axios.post(
+                {
+                    email,
+                    senha,
+                }
+            )
+
+        })
+
+    </script>
+</body>
+</html>
+
+<!-- 
+  titulo
+  descricao
+ -->
